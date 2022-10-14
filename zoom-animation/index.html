@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .page1,
+      .page2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+      }
+      .page1-img {
+        width: 500px;
+        height: 500px;
+      }
+      .img1-div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hidden {
+        display: none;
+      }
+     
+      
+      .page1,.page2 {
+        position: relative;
+      }
+    .page1-img{
+        position: absolute;
+        animation-name: example1;
+        animation-duration: 1s;
+
+    }
+
+    @keyframes example1 {
+        0% {
+          width: 600px;
+          height: 600px;
+          left: 0px;
+          top: 0px;
+        }
+  
+        100% {
+          width: 500px;
+          height: 500px;
+        }
+      }
+      .page2-img {
+        position: absolute;
+        animation-name: example;
+        animation-duration: 1s;
+      }
+
+      @keyframes example {
+        0% {
+          width: 500px;
+          height: 500px;
+          left: 0px;
+          top: 0px;
+        }
+
+        100% {
+          width: 600px;
+          height: 600px;
+        }
+      }
+
+      .text-anm-2{
+        animation-name: example3;
+        animation-duration: 3s;
+
+      }
+      @keyframes example3 {
+        0% {
+          opacity: 0;
+          
+      
+        }
+
+        100% {
+         opacity: 1;
+        }
+      }
+      .text-anm{
+        animation-name: example4;
+        animation-duration: 3s;
+
+      }
+      @keyframes example4 {
+        0% {
+          opacity: 0;
+          
+      
+        }
+
+        100% {
+         opacity: 1;
+        }
+      }
+      /* 
+      .zoom {
+        transition: width 2s height 2s;
+        transition-timing-function: linear;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page1">
+        <div class="img1-div">
+          <img src="img/image1.jpg" alt="" class="page1-img" />
+        </div>
+        <div class="text-anm">
+          <h3>Product page 1</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
+            sint debitis voluptatum nisi dolores dolore mollitia voluptatibus
+            nemo perspiciatis voluptas laboriosam quasi provident, eius
+            quibusdam. Animi ut praesentium deleniti nulla molestiae placeat
+            dolor, vitae fugiat quasi aut autem fugit culpa! Saepe ipsam dicta
+            molestiae cumque officiis dolorem dolor illum, eligendi ad eos,
+            quasi consequuntur ut ratione impedit nostrum expedita eius pariatur
+            iure rerum sit, ex repellat. Rem ut ratione et deleniti. Ex, quidem!
+            Veniam deleniti sint placeat temporibus recusandae aspernatur
+            expedita maiores beatae a ratione quam magnam fugiat error rem quo
+            et odio, sed, iure voluptatibus quae illum optio? Ipsam similique
+            adipisci iure incidunt dolores necessitatibus ipsum veritatis natus
+            magnam. Maiores labore aspernatur dignissimos in a! Sed incidunt
+            magnam quibusdam aliquam amet voluptate necessitatibus. Voluptas
+            voluptatem hic quod vel ratione minus temporibus perspiciatis esse
+            amet debitis consequuntur, tempora enim expedita maxime explicabo
+            dicta nostrum illum fugit odio deleniti exercitationem aliquam?
+          </p>
+
+          <button id="addBtn">Add</button>
+        </div>
+      </div>
+      <div class="page2 hidden" id="myDIV">
+        <div class="zoom-img">
+          <img src="img/image1.jpg" alt="" class="page2-img" />
+        </div>
+        <div class="text text-anm-2">
+          <h2>HELLO</h2>
+          <h3>Product page 2</h3>
+          
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            iure, dolorem omnis ex enim, quis illum eius provident amet ipsam,
+            dolorum aliquid quae? Dolores minus dicta voluptates voluptatum
+            atque temporibus fugit sapiente illum debitis laudantium! Aliquid
+            alias ipsam esse aliquam ducimus nobis debitis atque unde asperiores
+            accusantium, pariatur, voluptatum laborum dolorum dolor id, dolorem
+            quisquam iusto quidem sequi. Quo molestiae dolore magnam omnis
+            eligendi? Delectus quia voluptatem voluptates eaque veniam quae.
+            Atque neque ratione rem hic quam minima non numquam fugiat, alias
+            assumenda totam eum maxime quisquam unde distinctio voluptatem nobis
+            voluptas doloremque officia fuga earum repudiandae eveniet!
+            Perferendis ratione, error minima doloremque illo, fugiat veniam
+            temporibus quibusdam natus quod vero at neque provident. Corporis
+            illo nemo dolor consectetur excepturi itaque aut tenetur nostrum
+            iste autem, pariatur dignissimos veritatis sunt praesentium
+            necessitatibus eaque! Quia expedita molestiae itaque distinctio,
+            fugiat dolores unde. Sequi odit omnis sunt pariatur corrupti nisi
+            praesentium quo?
+          </p>
+          <p>Hello Buddy</p>
+          <a href="#" class="backTo">Back to product</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      var addBtn = document.getElementById("addBtn");
+      var page1 = document.querySelector(".page1");
+      var page2 = document.querySelector(".page2");
+      var backTo = document.querySelector(".backTo");
+      addBtn.addEventListener("click", function () {
+        page1.classList.add("hidden");
+        page2.classList.remove("hidden");
+      });
+      backTo.addEventListener("click", function () {
+        page2.classList.add("hidden");
+
+        page1.classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>
