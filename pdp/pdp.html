@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDP Page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="pdp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!--1  header -->
+
+      <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a href="" class="navbar-brand success logo">Vertiv</a>
+          <span class="bi bi-cart white-color">
+            <a href="card/card.html" class="cart-qnt"></a>
+          </span>
+        </div>
+      </nav>
+
+      <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#card"
+                >card</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#avail">Availability</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Products
+              </a>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              >
+                <li><a class="dropdown-item" href="#bucket">Bucket</a></li>
+                <li>
+                  <a class="dropdown-item" href="#sim-product"
+                    >Similar Products</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#cert"
+                tabindex="-1"
+                aria-disabled="true"
+                >Certifications</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#desc"
+                tabindex="-1"
+                aria-disabled="true"
+                >Descriptions</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#spec"
+                tabindex="-1"
+                aria-disabled="true"
+                >Specifications</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--2  carousel -->
+      <section class="carousel">
+        <div class="bigShow">
+          <img src="img/iphone.jpg" alt="" class="big big1" />
+          <img src="img/two.jpg" alt="" class="big hidden big2" />
+          <img src="img/three.jpg" alt="" class="big hidden big3" />
+          <img src="img/four.jpg" alt="" class="big hidden big4" />
+        </div>
+        <div class="caro">
+          <ion-icon name="chevron-back-outline" class="back prev"></ion-icon>
+          <img src="img/iphone.jpg" alt="" class="small img1 samll1 border" />
+          <img src="img/two.jpg" alt="" class="small img2 small2" />
+          <img src="img/three.jpg" alt="" class="small img3 small3" />
+          <img src="img/four.jpg" alt="" class="small img4 small4" />
+          <ion-icon
+            name="chevron-forward-outline"
+            class="forward next"
+          ></ion-icon>
+        </div>
+      </section>
+
+      <!--3 card section -->
+      <section class="card" id="card">
+        <div class="data">
+          <p>In stock</p>
+          <div class="ionicons">
+            <ion-icon name="leaf-outline" class="icon icon1"></ion-icon>
+            <ion-icon name="document-outline" class="icon"></ion-icon>
+          </div>
+          <div>
+            <p class="bigText">
+              12X18 31.82M 28/70<br />
+              White Accent Super<br />
+              Smooth Opaque Digital<br />
+              Text 1800/CT 189024
+            </p>
+          </div>
+          <div class="detail-info">
+            <div>
+              <p>VER</p>
+              <p>MEG</p>
+              <p>Pack</p>
+              <p>Cost per UOM</p>
+              <p>Unit Price</p>
+              <br />
+              <p class="total">Total</p>
+            </div>
+            <div>
+              <p>10102948</p>
+              <p>10102948</p>
+              <p>1,000/case</p>
+              <p>$199.51/bundle</p>
+              <p>136.25/CW</p>
+              <p>$43.35/M</p>
+              <p class="bulk">Bulk pricing</p>
+            </div>
+          </div>
+          <div class="price">$199.51</div>
+        </div>
+        <div class="btn">
+          <div class="counter">
+            <ion-icon name="remove-outline" onclick="decrement()"></ion-icon>
+            <p class="btnCount" id="counting"></p>
+            <ion-icon name="add-outline" onclick="increment()"></ion-icon>
+          </div>
+          <div>
+            <select
+              id="bundle"
+              name="bundle"
+              placeholder="Select Bundle"
+              required
+            >
+              <option value="bundle2">Bundle (2 case/bundle)</option>
+              <option value="bundle3">Bundle (3 case/bundle)</option>
+              <option value="bundle4">Bundle (4 case/bundle)</option>
+            </select>
+          </div>
+        </div>
+        <div class="order">
+          <div class="order-content order-content1">
+            <p>Min Order</p>
+            <p>450 SH</p>
+          </div>
+          <div class="order-content order-content-2">
+            <p>Multiple of:</p>
+            <p>450 SH</p>
+          </div>
+          <div class="applyDiv">
+            <p class="apply">APPLY</p>
+            <p class="underline"></p>
+          </div>
+        </div>
+        <div class="btns">
+          <button class="cart">Add to cart</button>
+
+          <div class="sim-btn">
+            <a href="" class="items">view similar items</a>
+          </div>
+          <div class="list-btn">
+            <a href="" class="list"
+              >add to list <span class="list-plus">+</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!--4 Availability -->
+      <section class="mainavail-div" id="avail">
+        <div class="avail-div">
+          <p class="avail-text">Availability</p>
+          <p class="avail-stock">44 in stock</p>
+        </div>
+        <!-- </hr> -->
+
+        <div class="branch-div">
+          <p class="branch-text">Your Branch</p>
+          <div class="branch-data">
+            <div>
+              <p>Atlanta/Norcross</p>
+            </div>
+            <div>
+              <p>17 in stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="next-div">
+          <p class="next-text">Next Day</p>
+          <div class="next-data">
+            <div>
+              <p>Knohudsh TN</p>
+              <p>Columbia SC</p>
+              <p>XCharlotte RD</p>
+            </div>
+            <div>
+              <p>12 in stock</p>
+              <p>05 in stock</p>
+              <p>08 in stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="secondday-div">
+          <p class="secondday-text">2+ Days</p>
+          <div class="secondday-data">
+            <div>
+              <p>Raleigh/East Garner</p>
+              <p>Memphis TN</p>
+            </div>
+            <div>
+              <p>01 in stock</p>
+              <p>01 in stock</p>
+            </div>
+          </div>
+        </div>
+        <div class="para-div">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus
+            neque harum nulla dignissimos aliquam, impedit nihil necessitatibus
+            tempora a hic odio velit laudantium illo et iure possimus modi. Nam,
+            nesciunt?
+          </p>
+        </div>
+      </section>
+
+      <!--5 form -->
+      <section class="customer">
+        <h4>Customer Info</h4>
+        <form>
+          <label>Department</label>
+          <select
+            id="department"
+            name="department"
+            placeholder="Select Department"
+            required
+          >
+            <option value="australia">HR</option>
+            <option value="canada">Finance</option>
+            <option value="usa">Marketing</option>
+            <option value="usa">IT</option>
+          </select>
+
+          <label>Job Code*</label>
+          <input
+            type="text"
+            id="job code"
+            name="job code"
+            placeholder="Job code*"
+            required
+          />
+
+          <label>GL Code*</label>
+          <input
+            type="text"
+            id="GL code"
+            name="GL code"
+            placeholder="GL code"
+            required
+          />
+
+          <label>Business Unit*</label>
+          <input
+            type="text"
+            id="bunit"
+            name="Business unit"
+            placeholder="Business unit"
+          />
+
+          <label>Purchase Order*</label>
+          <input
+            type="text"
+            id="purchase"
+            name="purchase order"
+            placeholder="Purchase Order"
+            required
+          />
+
+          <label>Comments</label>
+          <textarea
+            type="text"
+            id="comments"
+            name="comments"
+            placeholder="Add Comments here"
+          ></textarea>
+          <button type="button" class="submit-btn">Submit</button>
+        </form>
+      </section>
+
+      <!--6 bucket -->
+      <section class="bucket" id="bucket">
+        <div class="bucket-headingSec">
+          <h1 class="bucket-heading">You may also like</h1>
+        </div>
+        <div class="bucket-data">
+          <div class="firstBucket">
+            <div class="firstBucketImg">
+              <img src="img/iphone.jpg" alt="" />
+            </div>
+            <div class="firstBucketData">
+              <div>
+                <p>
+                  Shipping Box: 3 in Inside Lg, 3 in Inside Wd, 3 in Inside
+                  Ht...
+                </p>
+              </div>
+              <div class="firstPrice">
+                <span>$8.39</span>
+                <ion-icon name="leaf-outline" class="leaf"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="secondBucket">
+            <div class="secondBucketImg">
+              <img src="img/iphone.jpg" alt="" />
+            </div>
+            <div class="secondBucketData">
+              <div>
+                <p>
+                  Shipping Box: 3 in Inside Lg, 3 in Inside Wd, 3 in Inside
+                  Ht...
+                </p>
+              </div>
+              <div class="secondPrice">
+                <span>$8.39</span>
+                <ion-icon name="leaf-outline" class="leaf"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bucket-showMore">
+          <a href="" class="bucket-showMoreLink">Show More</a>
+        </div>
+      </section>
+
+      <!--7 similar products -->
+      <section class="product" id="sim-product">
+        <div class="product-headingSec">
+          <h1 class="product-heading">Similar Products</h1>
+        </div>
+        <div class="product-data">
+          <div class="firstproduct">
+            <div class="firstProductImg">
+              <img src="img/iphone.jpg" alt="" />
+            </div>
+            <div class="firstProductData">
+              <div>
+                <p>
+                  Shipping Box: 3 in Inside Lg, 3 in Inside Wd, 3 in Inside
+                  Ht...
+                </p>
+              </div>
+              <div class="firstPrice">
+                <span>$8.39</span>
+                <ion-icon name="leaf-outline" class="leaf"></ion-icon>
+              </div>
+            </div>
+          </div>
+          <div class="secondproduct">
+            <div class="secondProductImg">
+              <img src="img/iphone.jpg" alt="" />
+            </div>
+            <div class="secondProductData">
+              <div>
+                <p>
+                  Shipping Box: 3 in Inside Lg, 3 in Inside Wd, 3 in Inside
+                  Ht...
+                </p>
+              </div>
+              <div class="secondPrice">
+                <span>$8.39</span>
+                <ion-icon name="leaf-outline" class="leaf"></ion-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-showMore">
+          <a href="" class="product-showMoreLink">Show More</a>
+        </div>
+      </section>
+
+      <!--8 description -->
+      <section class="desc" id="desc">
+        <div class="desc-heading">
+          <h2>Description</h2>
+          <ion-icon name="remove-outline" class="removeDesc"></ion-icon>
+        </div>
+        <div class="desc-text">
+          <p>
+            Sed tempor vivera risus, non hendreit ex pretium nec. Vestibulum
+            posuere tempus nibh. Nam at fermentum erat. Quisque eu tellus at
+            doloar venenatis aliquam. Sed at ultrices arcu, quis molestie nunc.
+            Integer velit felis, vulputate at erat sit amet, condimentum lacinia
+            felis.
+          </p>
+        </div>
+      </section>
+
+      <!--9 Specifications -->
+      <section class="spec" id="spec">
+        <div class="spec-heading">
+          <h2>Specifications</h2>
+          <ion-icon name="remove-outline" class="removeSpec"></ion-icon>
+        </div>
+        <div class="spec-data">
+          <div class="spec-topData">
+            <div class="spec-dataL">
+              <p>Basic Size</p>
+              <p>Brand</p>
+              <p>Caliper</p>
+              <p>Finish</p>
+              <p>Grain Direction</p>
+              <p>M/Weight</p>
+              <p>Mfg Name</p>
+              <p>PPI</p>
+              <p>Size</p>
+              <p>Weight</p>
+            </div>
+            <div class="spec-dataR">
+              <p>25x38</p>
+              <p>Accent</p>
+              <p>4.8</p>
+              <p>Super Smooth</p>
+              <p>GI</p>
+              <p>31.82</p>
+              <p>Sylvamo</p>
+              <p>417</p>
+              <p>12X18</p>
+              <p>57.276000</p>
+            </div>
+          </div>
+          <div class="show-moreDiv spec-bottomData">
+            <a href="" class="show-more">show more</a>
+          </div>
+        </div>
+      </section>
+
+      <!--10 certifications -->
+      <section class="cert" id="cert">
+        <div class="cert-heading">
+          <h2>Certifications</h2>
+          <ion-icon name="remove-outline" class="removeCert"></ion-icon>
+        </div>
+        <div class="cert-data">
+          <div class="certificates">
+            <div class="fsc-cert">
+              <div class="fsc-heading">fsc</div>
+              <div class="fsc-data">
+                <div class="fsc-topData">
+                  <div>
+                    <p>Product Level:</p>
+                    <p>Certification %:</p>
+                    <p>Vendor. #:</p>
+                  </div>
+                  <div class="text-right">
+                    <p>FSC MIX CREDIT</p>
+                    <p>--</p>
+                    <p>BV-COC0168336</p>
+                  </div>
+                </div>
+                <p class="underln"></p>
+                <div class="fsc-bottomData">
+                  <div class="download-sec">
+                    <a href="files/demo.pdf" download>
+                      <ion-icon
+                        name="download-outline"
+                        class="download-icon"
+                      ></ion-icon>
+                    </a>
+                    <a href="files/demo.pdf" class="download-cert" download>
+                      FSC Certification
+                    </a>
+                  </div>
+                  <div>
+                    <p>(31Kb)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sfi-cert">
+              <div class="sfi-heading">sfi</div>
+              <div class="sfi-data">
+                <div class="sfi-topData">
+                  <div>
+                    <p>Product Level:</p>
+                    <p>Certification %:</p>
+                    <p>Vendor. #:</p>
+                  </div>
+                  <div class="text-right">
+                    <p>SFICERTSOURCING</p>
+                    <p>--</p>
+                    <p>BV-SFICOC-US015522-1</p>
+                  </div>
+                </div>
+                <p class="underln"></p>
+                <div class="sfi-bottomData">
+                  <div class="download-sec">
+                    <a href="files/demo.pdf" download>
+                      <ion-icon
+                        name="download-outline"
+                        class="download-icon"
+                      ></ion-icon>
+                    </a>
+                    <a href="files/demo.pdf" class="download-cert" download>
+                      SFI Certification
+                    </a>
+                  </div>
+                  <div>
+                    <p>(31KB)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="downloads">
+            <div class="download-headingSec">
+              <h1 class="download-heading">Downloads</h1>
+              <ion-icon
+                name="download-outline"
+                class="download-file"
+              ></ion-icon>
+            </div>
+            <p class="underln"></p>
+            <div class="download-files">
+              <div class="files-left">
+                <a href="files/filename.pdf" class="download-cert" download>
+                  filename
+                </a>
+                <a href="files/filenametwo.pdf" class="download-cert" download>
+                  filenametwo
+                </a>
+                <a
+                  href="files/filenamethree.pdf"
+                  class="download-cert"
+                  download
+                >
+                  filenamethree
+                </a>
+              </div>
+              <div class="files-right">
+                <a href="files/filenamefour.pdf" class="download-cert" download>
+                  filenamefour
+                </a>
+                <a href="files/filenamefive.pdf" class="download-cert" download>
+                  filenamefive
+                </a>
+                <a href="files/filenamesix.pdf" class="download-cert" download>
+                  filenamesix
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="notifications">
+            <div class="noti-headingSec">
+              <h1 class="noti-heading">Notifications</h1>
+
+              <ion-icon
+                name="alert-circle-outline"
+                class="download-file"
+              ></ion-icon>
+            </div>
+            <p class="underln"></p>
+            <div class="noti-data">
+              <p>Vertiv's fuel surcharge is in place</p>
+              <a href="" class="learn-more">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--11 footer -->
+      <footer class="foot">
+        <div class="footer">
+          <div class="foot-link">
+            <ul>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Newsroom</a></li>
+              <li><a href="">Investers</a></li>
+
+              <li><a href="">Customer Service</a></li>
+            </ul>
+            <ul>
+              <li><a href="">Help</a></li>
+              <li><a href="">Site Map</a></li>
+              <li><a href="">Accessibility Statement</a></li>
+
+              <li><a href="">Phishing Email Scams</a></li>
+              <li><a href="">Cookie Statement</a></li>
+            </ul>
+            <ul>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms of use</a></li>
+              <li><a href="">Terms of sale</a></li>
+
+              <li><a href="">Terms of purchase</a></li>
+            </ul>
+          </div>
+          <div class="main-foot">
+            <p class="foot-f">Vertiv Corporation</p>
+            <p>
+              1000 Abernathy Rd. NE Bldg. 400, Ste. 1700
+              <br />
+              Atlanta, GA 30328 | +1 (844)-4848
+            </p>
+            <hr />
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+
+    <script src="pdp.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
