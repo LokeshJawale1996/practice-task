@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  background-color: rgb(238, 232, 232);
+}
+
+.left-header, .right-header {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navMenu {
+  font-size: 32px;
+}
+
+.navs {
+  font-size: 20px;
+}
+
+.site {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+}
+
+.hidden {
+  display: none;
+}
+
+.clickMenu {
+  background-color: rgb(238, 232, 232);
+  top: 0;
+}/*# sourceMappingURL=style.css.map */
