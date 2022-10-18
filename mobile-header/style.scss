@@ -178,21 +178,70 @@ a{
     padding: 16px 28px;
     display: flex;
     text-transform: uppercase;
-    gap: 20px;
+    gap: 18px;
     
 }
 .high-jewel{
     
     background-color: $backgroundColor;
-    background-color:$backgroundColor ;
-    top: 0;
+    @extend .clickMenu;
     animation-name: example3;
-    animation-duration: 3s;
-    position: absolute;
-    width: 100%;
+  
 }
 
 @keyframes example3 {
+    0% {
+    
+    
+     background-color: $backgroundColor;
+    
+      width: 0;
+      opacity: 0;
+   
+    }
+      25%{
+      
+        background-color: $backgroundColor;
+        width: 100%;
+       
+      
+    }
+    50%{
+        
+        background-color: $backgroundColor;
+        width: 100%;
+      
+
+    }
+    75%{
+        background-color: $backgroundColor;
+        width: 100%;
+        opacity: 1;
+
+    }
+
+    100% {
+    background-color:$backgroundColor;
+    opacity: 1;
+
+
+   
+    right: 0;
+    top:0;
+    width: 100%;
+    
+    }
+  }
+
+  // <!-- Hight Jewellery section -->
+.jewel{
+    @extend .clickMenu;
+    animation-name: example4;
+    background-color: $backgroundColor;
+
+}
+
+@keyframes example4 {
     0% {
     
     

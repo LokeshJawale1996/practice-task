@@ -6,7 +6,10 @@ var head = document.querySelector(".head");
 var close = document.querySelector(".close");
 var goToHighj = document.querySelector(".goToHighJ");
 var openHighJ = document.querySelector(".high-jewel");
-var backMainNav = document.querySelector(".backMainNav")
+var backMainNav = document.querySelector(".backMainNav");
+var openJewel = document.querySelector(".jewel");
+var goToJewel = document.querySelector(".goToJewel");
+var backMainNav2 = document.querySelector(".backMainNav2");
 
     menu.addEventListener("click",function(){
         if(!click.classList.contains("hidden")){
@@ -47,6 +50,19 @@ goToHighj.addEventListener("click",function(){
     }
 })
 
+goToJewel.addEventListener("click",function(){
+  
+    if(!openJewel.classList.contains("hidden")){
+        openJewel.classList.add("hidden");
+        click.classList.remove("hidden");
+    }else{
+        openJewel.classList.remove("hidden");
+        click.classList.add("hidden");
+
+
+    }
+})
+
 backMainNav.addEventListener("click",function(){
     if(!click.classList.contains("hidden")){
         click.classList.add("hidden");
@@ -54,7 +70,23 @@ backMainNav.addEventListener("click",function(){
     }else{
         click.classList.remove("hidden");
         openHighJ.classList.add("hidden");
+        openJewel.classList.add("hidden")
 
     }
+
+    
+
+})
+backMainNav2.addEventListener("click",function(){
+    if(!click.classList.contains("hidden")){
+        click.classList.add("hidden");
+      
+    }else{
+        click.classList.remove("hidden");
+        openJewel.classList.add("hidden");
+
+    }
+
+    
 
 })
