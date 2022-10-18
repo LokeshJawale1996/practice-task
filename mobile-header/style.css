@@ -172,7 +172,7 @@
     width: 0;
   }
 }
-a {
+.product a {
   text-decoration: none;
   color: black;
   font-size: 18px;
@@ -184,6 +184,8 @@ a {
   justify-items: center;
   justify-content: space-between;
   text-transform: uppercase;
+  color: black;
+  text-decoration: none;
 }
 
 .product-icon {
@@ -324,4 +326,126 @@ a {
     top: 0;
     width: 100%;
   }
+}
+.homeCont {
+  width: 100%;
+}
+
+h4 {
+  margin: 20px 0px;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 12px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+
+img:hover {
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+.small {
+  width: 180px;
+  height: 180px;
+  margin: 5px;
+  padding: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.forward {
+  position: absolute;
+  top: 45%;
+  right: 15px;
+  font-size: 15px;
+  padding: 1px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.prev {
+  position: absolute;
+  top: 45%;
+  left: 15px;
+  font-size: 15px;
+  padding: 1px;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.imgdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hoverEffect {
+  opacity: 0;
+  color: #000;
+  background-color: #fff;
+}
+
+.first:hover .hoverEffect {
+  opacity: 1;
+}
+
+.dot1, .dot2, .dot3, .dot4 {
+  height: 2.5px;
+  width: 90px;
+  border-radius: 2%;
+  display: inline-block;
+  transition: all 0.6s ease;
+}
+
+.dot-div {
+  position: absolute;
+  top: 48%;
+  left: 6.5%;
+}
+
+.active,
+.dot1:hover, .dot2:hover, .dot3:hover, .dot4:hover {
+  transition: all 0.6s ease;
+  background-color: #5b5757;
+  opacity: 0;
+}
+
+.first:hover .active {
+  opacity: 1;
+}
+
+.slide1-data {
+  padding: 16px 0px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.para-data {
+  padding: 1rem 2rem;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 9px;
+  background-color: rgb(0, 0, 0);
+  border: black;
+  color: white;
+  align-items: center;
+  text-transform: uppercase;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
