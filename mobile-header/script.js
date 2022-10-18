@@ -4,6 +4,10 @@ var menu = document.querySelector(".navMenu");
 var click = document.querySelector(".clickMenu");
 var head = document.querySelector(".head");
 var close = document.querySelector(".close");
+var goToHighj = document.querySelector(".goToHighJ");
+var openHighJ = document.querySelector(".high-jewel");
+var backMainNav = document.querySelector(".backMainNav")
+
     menu.addEventListener("click",function(){
         if(!click.classList.contains("hidden")){
             click.classList.add("hidden");
@@ -12,7 +16,6 @@ var close = document.querySelector(".close");
         }else{
             click.classList.remove("hidden");
            
-
         }
 
     })
@@ -29,4 +32,29 @@ var close = document.querySelector(".close");
 
 
     // }
+})
+
+goToHighj.addEventListener("click",function(){
+  
+    if(!openHighJ.classList.contains("hidden")){
+        openHighJ.classList.add("hidden");
+        click.classList.remove("hidden");
+    }else{
+        openHighJ.classList.remove("hidden");
+        click.classList.add("hidden");
+
+
+    }
+})
+
+backMainNav.addEventListener("click",function(){
+    if(!click.classList.contains("hidden")){
+        click.classList.add("hidden");
+      
+    }else{
+        click.classList.remove("hidden");
+        openHighJ.classList.add("hidden");
+
+    }
+
 })
